@@ -1,0 +1,10 @@
+# Render Blueprint: infrastructure-as-code for the deployed web service.
+services:
+  - type: web
+    name: lung-ct-classifier
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /_stcore/health
+    autoDeploy: true          # redeploy on every push to the main branch
